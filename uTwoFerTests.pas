@@ -7,10 +7,10 @@
 
    "cannot compile"
 
- It's looking for a file named utwo-fer.pas that doesn't exist.
+ It's looking for a file named utwofer.pas that doesn't exist.
 
- To fix the error, create a unit file named utwo-fer.pas
- in the same directory as the file utwo-ferTest.pas.
+ To fix the error, create a unit file named utwofer.pas
+ in the same directory as the file utwoferTest.pas.
 
  The beginning of the new unit file should contain a unit statement:
 
