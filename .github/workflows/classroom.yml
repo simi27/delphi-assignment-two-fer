@@ -1,0 +1,32 @@
+name: Classroom Workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Free Pascal Compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fpc
+
+      - name: Compile student code
+        run: fpc twofer.dpr
+
+      - name: Make script executable
+        run: chmod +x test.sh
+
+      - name: Run tests
+        id: run-tests
+        run: ./test.sh
+
+      - name: Autograding Reporter
+        uses: education/autograding-reporter@v1
+        if: always()
+        with:
+          tests: ${{ steps.run-tests.outcome }}
+          points: 10
