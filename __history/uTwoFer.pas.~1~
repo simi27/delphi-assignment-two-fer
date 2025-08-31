@@ -1,10 +1,3 @@
-unit utwofer;
-
-interface
-
-function TwoFer(const AName: string): string;
-
-implementation
 
 function TwoFer(const AName: string): string;
 var
@@ -17,3 +10,4 @@ begin
 
   Result := 'One for ' + Participant + ', one for me.';
 end;
+
