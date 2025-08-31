@@ -24,9 +24,4 @@ jobs:
         id: run-tests
         run: ./test.sh
 
-      - name: Autograding Reporter
-        uses: education/autograding-reporter@v1
-        if: always()
-        with:
-          tests: ${{ steps.run-tests.outcome }}
-          points: 10
+      
